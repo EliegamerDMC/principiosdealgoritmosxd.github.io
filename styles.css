@@ -1,0 +1,118 @@
+/* --- ESTILOS GENERALES Y TEMA OSCURO PREMIUM --- */
+:root {
+    --bg-principal: #0f172a;
+    --bg-tarjeta: #1e293b;
+    --texto-principal: #f8fafc;
+    --texto-secundario: #94a3b8;
+    --color-acento: #38bdf8;
+    --sombra-difuminada: 0 0 25px rgba(56, 189, 248, 0.4);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
+    margin: 0;
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+
+.contenedor {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--bg-tarjeta);
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: var(--color-acento);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* --- CONTENEDORES DE LOS CASOS --- */
+.caso-card {
+    background-color: var(--bg-tarjeta);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--color-acento);
+    margin-top: 0;
+    border-left: 4px solid var(--color-acento);
+    padding-left: 10px;
+}
+
+.enunciado {
+    background-color: rgba(15, 23, 42, 0.6);
+    padding: 15px;
+    border-radius: 8px;
+    font-style: italic;
+    color: var(--texto-secundario);
+}
+
+/* --- SECCIÓN DE IMÁGENES CON DIFUMINADO (GLOW) --- */
+.imagenes-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.columna-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.columna-img h4 {
+    margin-bottom: 10px;
+    color: var(--texto-secundario);
+}
+
+.marco-imagen {
+    width: 100%;
+    height: 300px; /* Ajusta la altura si tus diagramas son más altos */
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(56, 189, 248, 0.3);
+    box-shadow: var(--sombra-difuminada); /* Aquí está el efecto difuminado a los lados */
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marco-imagen:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 35px rgba(56, 189, 248, 0.7); /* Incrementa el brillo al pasar el mouse */
+}
+
+.marco-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantiene la proporción de la imagen sin recortarla */
+}
+
+.placeholder-texto {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Diseño adaptable para teléfonos móviles */
+@media (max-width: 768px) {
+    .imagenes-contenedor {
+        grid-template-columns: 1fr;
+    }
+}
